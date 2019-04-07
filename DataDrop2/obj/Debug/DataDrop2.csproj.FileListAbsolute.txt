@@ -1,0 +1,16 @@
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\DataDrop2.exe.config
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\DataDrop2.exe
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\DataDrop2.pdb
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.csprojAssemblyReference.cache
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.Form1.resources
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.Properties.Resources.resources
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.csproj.GenerateResource.cache
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.csproj.CoreCompileInputs.cache
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.exe
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.pdb
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Json.dll
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Json.pdb
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.csproj.CopyComplete
