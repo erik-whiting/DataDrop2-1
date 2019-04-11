@@ -46,6 +46,9 @@
             this.Keep = new System.Windows.Forms.Button();
             this.Discard = new System.Windows.Forms.Button();
             this.generateFile = new System.Windows.Forms.Button();
+            this.DestinationFileNameTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.FileExtensionLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +59,7 @@
             this.SourceDataComboBox.Name = "SourceDataComboBox";
             this.SourceDataComboBox.Size = new System.Drawing.Size(121, 21);
             this.SourceDataComboBox.TabIndex = 0;
+            this.SourceDataComboBox.SelectedIndexChanged += new System.EventHandler(this.SourceDataComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -85,6 +89,7 @@
             this.DestinationDataComboBox.Name = "DestinationDataComboBox";
             this.DestinationDataComboBox.Size = new System.Drawing.Size(121, 21);
             this.DestinationDataComboBox.TabIndex = 3;
+            this.DestinationDataComboBox.SelectedIndexChanged += new System.EventHandler(this.DestinationDataComboBox_SelectedIndexChanged);
             // 
             // sourceFileTextBox
             // 
@@ -201,18 +206,46 @@
             // 
             // generateFile
             // 
-            this.generateFile.Location = new System.Drawing.Point(596, 63);
+            this.generateFile.Location = new System.Drawing.Point(596, 110);
             this.generateFile.Name = "generateFile";
             this.generateFile.Size = new System.Drawing.Size(121, 23);
             this.generateFile.TabIndex = 18;
             this.generateFile.Text = "Generate File";
             this.generateFile.UseVisualStyleBackColor = true;
+            this.generateFile.Click += new System.EventHandler(this.generateFile_Click);
+            // 
+            // DestinationFileNameTextBox
+            // 
+            this.DestinationFileNameTextBox.Location = new System.Drawing.Point(596, 84);
+            this.DestinationFileNameTextBox.Name = "DestinationFileNameTextBox";
+            this.DestinationFileNameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.DestinationFileNameTextBox.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(596, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Destination File Name";
+            // 
+            // FileExtensionLabel
+            // 
+            this.FileExtensionLabel.AutoSize = true;
+            this.FileExtensionLabel.Location = new System.Drawing.Point(723, 91);
+            this.FileExtensionLabel.Name = "FileExtensionLabel";
+            this.FileExtensionLabel.Size = new System.Drawing.Size(0, 13);
+            this.FileExtensionLabel.TabIndex = 21;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 450);
+            this.Controls.Add(this.FileExtensionLabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.DestinationFileNameTextBox);
             this.Controls.Add(this.generateFile);
             this.Controls.Add(this.Discard);
             this.Controls.Add(this.Keep);
@@ -253,6 +286,9 @@
         private System.Windows.Forms.Button Keep;
         private System.Windows.Forms.Button Discard;
         private System.Windows.Forms.Button generateFile;
+        private System.Windows.Forms.TextBox DestinationFileNameTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label FileExtensionLabel;
     }
 }
 

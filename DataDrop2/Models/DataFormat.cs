@@ -10,19 +10,15 @@ namespace DataDrop2
 {
     public abstract class DataFormat : ITransformations
     {
-        public string DocumentType { get; set; }
-        public string DataSource { get; set; }
-        public bool IsSource { get; set; }
-        public bool IsDestination { get; set; }
+        public string DataType { get; set; }
         public List<DataPoint> DataPoints { get; set; }
 
-        public abstract object ToDataFormat(List<DataPoint> dataPoints);
+        public abstract object ToDataFormat();
+        public abstract void WriteToFile(string directoryLocation, string fileName);
 
-        public DataFormat(string documentType, bool isSource, bool isDestination)
+        public DataFormat(string dataType)
         {
-            DocumentType = documentType;
-            IsSource = isSource;
-            IsDestination = isDestination;
+            DataType = dataType;
         }
 
         public List<DataPoint> GetSelectedDataPoints()

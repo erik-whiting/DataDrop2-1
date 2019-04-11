@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using DataDrop2.Models;
 
 namespace DataDrop2
 {
@@ -43,17 +44,7 @@ namespace DataDrop2
 
         }
 
-        private void SourceDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var selectedSourceFormat = (DataFormat)SourceDataComboBox.SelectedItem;
-            selectedSourceFormat.IsSource = true;
-        }
 
-        private void DestinationDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var selectedDestinationFormat = (DataFormat)DestinationDataComboBox.SelectedItem;
-            selectedDestinationFormat.IsDestination = true;
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -102,6 +93,65 @@ namespace DataDrop2
         private void Discard_Click(object sender, EventArgs e)
         {
             destinationAttributes.Items.Remove(destinationAttributes.SelectedItem);
+        }
+
+        private void generateFile_Click(object sender, EventArgs e)
+        {
+            string directory = Configuration.Directory();
+            string fileName = DestinationFileNameTextBox.Text;
+            //DataFormat dataFormat;
+            //switch (destinationDataType)
+            //{
+            //    case "JSON":
+            //        dataFormat = new JSONDataFormat(destinationDataType, false, true);
+            //        break;
+            //    case "XML":
+            //        break;
+            //    case "API":
+            //        break;
+            //    case "Database":
+            //        break;
+            //}
+            //dataFormat.WriteToFile();
+        }
+
+        private void SourceDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //"JSON",
+            //    "XML",
+            //    "API",
+            //    "Database"
+            
+        }
+
+        private void DestinationDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string toDestinationFileType = DestinationDataComboBox.Text;
+            FileExtensionLabel.Text = SetFileExtension(toDestinationFileType);
+        }
+
+        private string SetFileExtension(string selected)
+        {
+            string dataType = string.Empty;
+            switch (selected)
+            {
+                case "JSON":
+                    dataType = ".json";
+                    break;
+                case "XML":
+                    dataType = ".xml";
+                    break;
+                case "API":
+                    dataType = "In Development";
+                    break;
+                case "Database":
+                    dataType = ".sql";
+                    break;
+                default:
+                    dataType = ".json";
+                    break;
+            }
+            return dataType;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace DataDrop2.Interfaces
 {
     public interface ITransformations
     {
-        object ToDataFormat(List<DataPoint> dataPoints);
+        object ToDataFormat();
+        void WriteToFile(string directoryLocation, string fileName);
     }
 }
