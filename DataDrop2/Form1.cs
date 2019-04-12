@@ -67,20 +67,27 @@ namespace DataDrop2
 
         private void showAttributes_Click(object sender, EventArgs e)
         {
-            var x = new List<Dictionary<string, string>> ();
+            var allAttributes = new List<Dictionary<string, string>> ();
             var fileLocation = sourceFileTextBox.Text;
             var loadedJson = new LoadJSON(fileLocation);
-            foreach (var item in loadedJson.JsonObject.Children())
+            foreach (var jobject in loadedJson.JsonObjects)
             {
-                JsonSerializer serializer = new JsonSerializer();
-                var itemDict = new Dictionary<string, string>();
-                itemDict.Add(item.Path, item.First.ToString());
-                x.Add(itemDict);
+                foreach (var item in jobject)
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    var itemDict = new Dictionary<string, string>();
+                    itemDict.Add(item.Key, item.Value.ToString());
+                    allAttributes.Add(itemDict);
+                }
             }
 
-            foreach (var item in x)
+            foreach (var item in allAttributes)
             {
-                availableListBox.Items.Add(item.First().Key);
+                if (!availableListBox.Items.Contains(item.First().Key))
+                {
+                    availableListBox.Items.Add(item.First().Key);
+                }
+                
             }
 
         }
@@ -98,30 +105,30 @@ namespace DataDrop2
         private void generateFile_Click(object sender, EventArgs e)
         {
             string directory = Configuration.Directory();
-            string fileName = DestinationFileNameTextBox.Text;
-            //DataFormat dataFormat;
-            //switch (destinationDataType)
-            //{
-            //    case "JSON":
-            //        dataFormat = new JSONDataFormat(destinationDataType, false, true);
-            //        break;
-            //    case "XML":
-            //        break;
-            //    case "API":
-            //        break;
-            //    case "Database":
-            //        break;
-            //}
-            //dataFormat.WriteToFile();
+            string destinationDataType = DestinationDataComboBox.Text;
+            string fileName = DestinationFileNameTextBox.Text + SetFileExtension(destinationDataType);
+            DataFormat dataFormat;
+            switch (destinationDataType)
+            {
+                case "JSON":
+                    dataFormat = new JSONDataFormat(destinationDataType);
+                    dataFormat.WriteToFile(directory, fileName);
+                    break;
+                case "XML":
+                    break;
+                case "API":
+                    break;
+                case "Database":
+                    break;
+                default:
+                    dataFormat = new JSONDataFormat(destinationDataType);
+                    break;
+            }
         }
 
         private void SourceDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //"JSON",
-            //    "XML",
-            //    "API",
-            //    "Database"
-            
+  
         }
 
         private void DestinationDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
