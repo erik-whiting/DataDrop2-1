@@ -70,16 +70,19 @@ namespace DataDrop2.Models
                 
                 dataSheet.Cells[headerRange].LoadFromArrays(headerRow);
                 int columnStart = 1;
-                //dataSheet.Cells[2, 1].LoadFromArrays(cellData);
+                int rowStart = 2;
 
                 for (int i = 0; i < cellData.Count; i++)
                 {
                     var listItem = new List<object[]>();
                     var item = cellData[i];
                     listItem.Add(item);
-                    dataSheet.Cells[2, columnStart + i].LoadFromArrays(listItem);
+                    //dataSheet.Cells[2, columnStart + i].LoadFromArrays(listItem);
+                    for (int x = 0; x < item.Length; x++)
+                    {
+                        dataSheet.Cells[rowStart + x, columnStart + i].LoadFromText(item[x]);
+                    }
                     
-
 
                 }
 
