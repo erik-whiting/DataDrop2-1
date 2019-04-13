@@ -18,6 +18,9 @@ namespace DataDrop2
     {
         List<string> SourceFormats = new List<string>();
         List<string> DestinationFormats = new List<string>();
+        List<string> KeepVals = new List<string>();
+        public List<DataPoint> AvailableDataPoints = new List<DataPoint>();
+        List<Dictionary<string, string>> allAttributes = new List<Dictionary<string, string>>();
 
         public Form1()
         {
@@ -28,6 +31,7 @@ namespace DataDrop2
                 "JSON",
                 "XML",
                 "API",
+                "Excel",
                 "Database"
             };
 
@@ -67,39 +71,38 @@ namespace DataDrop2
 
         private void showAttributes_Click(object sender, EventArgs e)
         {
-            var allAttributes = new List<Dictionary<string, string>> ();
+            
             var fileLocation = sourceFileTextBox.Text;
-            var loadedJson = new LoadJSON(fileLocation);
-            foreach (var jobject in loadedJson.JsonObjects)
-            {
-                foreach (var item in jobject)
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    var itemDict = new Dictionary<string, string>();
-                    itemDict.Add(item.Key, item.Value.ToString());
-                    allAttributes.Add(itemDict);
-                }
-            }
+            var sourceFileType = SourceDataComboBox.Text;
 
-            foreach (var item in allAttributes)
+            if (sourceFileType == "JSON")
             {
-                if (!availableListBox.Items.Contains(item.First().Key))
+                allAttributes = AttributesFromJson.GetJsonAttributes(fileLocation);
+
+                foreach (var item in allAttributes)
                 {
-                    availableListBox.Items.Add(item.First().Key);
+                    if (!availableListBox.Items.Contains(item.First().Key))
+                    {
+                        availableListBox.Items.Add(item.First().Key);
+                    }
                 }
                 
             }
+            
 
         }
 
         private void Keep_Click(object sender, EventArgs e)
         {
             destinationAttributes.Items.Add(availableListBox.SelectedItem);
+            KeepVals.Add(availableListBox.SelectedItem.ToString());
         }
 
         private void Discard_Click(object sender, EventArgs e)
         {
             destinationAttributes.Items.Remove(destinationAttributes.SelectedItem);
+            KeepVals.RemoveAll(x => x == destinationAttributes.SelectedItem.ToString());
+            
         }
 
         private void generateFile_Click(object sender, EventArgs e)
@@ -112,6 +115,7 @@ namespace DataDrop2
             {
                 case "JSON":
                     dataFormat = new JSONDataFormat(destinationDataType);
+                    dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "XML":
@@ -119,6 +123,8 @@ namespace DataDrop2
                 case "API":
                     break;
                 case "Database":
+                    break;
+                case "Excel":
                     break;
                 default:
                     dataFormat = new JSONDataFormat(destinationDataType);
@@ -153,6 +159,9 @@ namespace DataDrop2
                     break;
                 case "Database":
                     dataType = ".sql";
+                    break;
+                case "Excel":
+                    dataType = ".xlsx";
                     break;
                 default:
                     dataType = ".json";
