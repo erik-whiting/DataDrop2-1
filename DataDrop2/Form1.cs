@@ -75,6 +75,18 @@ namespace DataDrop2
             var fileLocation = sourceFileTextBox.Text;
             var sourceFileType = SourceDataComboBox.Text;
 
+            switch (sourceFileType)
+            {
+                case "JSON":
+                    allAttributes = AttributesFromJson.GetJsonAttributes(fileLocation);
+                    SetAttributesView(allAttributes);
+                    break;
+                case "Exce":
+                    break;
+                default:
+                    break;
+            }
+
             if (sourceFileType == "JSON")
             {
                 allAttributes = AttributesFromJson.GetJsonAttributes(fileLocation);
@@ -90,6 +102,17 @@ namespace DataDrop2
             }
             
 
+        }
+
+        private void SetAttributesView(List<Dictionary<string, string>> attributes)
+        {
+            foreach (var item in attributes)
+            {
+                if (!availableListBox.Items.Contains(item.First().Key))
+                {
+                    availableListBox.Items.Add(item.First().Key);
+                }
+            }
         }
 
         private void Keep_Click(object sender, EventArgs e)
