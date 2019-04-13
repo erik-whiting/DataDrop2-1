@@ -16,3 +16,6 @@ C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Newtonsoft.Json.xml
 C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.csproj.CopyComplete
 C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\EPPlus.dll
 C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\EPPlus.xml
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Bytescout.Spreadsheet.dll
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\bin\Debug\Bytescout.Spreadsheet.xml
+C:\Users\eedee\source\repos\DataDrop2\DataDrop2\obj\Debug\DataDrop2.csproj.ResolveComReference.cache

@@ -81,7 +81,9 @@ namespace DataDrop2
                     allAttributes = AttributesFromJson.GetJsonAttributes(fileLocation);
                     SetAttributesView(allAttributes);
                     break;
-                case "Exce":
+                case "Excel":
+                    allAttributes = AttributesFromExcel.GetExcelAttributes(fileLocation);
+                    SetAttributesView(allAttributes);
                     break;
                 default:
                     break;
@@ -112,6 +114,14 @@ namespace DataDrop2
                 {
                     availableListBox.Items.Add(item.First().Key);
                 }
+            }
+        }
+
+        private void SetAttributesViewFromExcel(List<Dictionary<string, string>> attributes)
+        {
+            foreach (var item in attributes.First())
+            {
+                availableListBox.Items.Add(item.Key);
             }
         }
 
