@@ -125,6 +125,9 @@ namespace DataDrop2
                 case "Database":
                     break;
                 case "Excel":
+                    dataFormat = new ExcelDataFormat(destinationDataType);
+                    dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
+                    dataFormat.WriteToFile(directory, fileName);
                     break;
                 default:
                     dataFormat = new JSONDataFormat(destinationDataType);
