@@ -89,19 +89,7 @@ namespace DataDrop2
                     break;
             }
 
-            if (sourceFileType == "JSON")
-            {
-                allAttributes = AttributesFromJson.GetJsonAttributes(fileLocation);
 
-                foreach (var item in allAttributes)
-                {
-                    if (!availableListBox.Items.Contains(item.First().Key))
-                    {
-                        availableListBox.Items.Add(item.First().Key);
-                    }
-                }
-                
-            }
             
 
         }
@@ -156,6 +144,9 @@ namespace DataDrop2
                 case "API":
                     break;
                 case "Database":
+                    dataFormat = new DatabaseDataFormat(destinationDataType);
+                    dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
+                    dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "Excel":
                     dataFormat = new ExcelDataFormat(destinationDataType);
@@ -182,25 +173,32 @@ namespace DataDrop2
         private string SetFileExtension(string selected)
         {
             string dataType = string.Empty;
+            string message = "Destination File Name";
             switch (selected)
             {
                 case "JSON":
                     dataType = ".json";
+                    label3.Text = message;
                     break;
                 case "XML":
                     dataType = ".xml";
+                    label3.Text = message;
                     break;
                 case "API":
                     dataType = "In Development";
+                    label3.Text = message;
                     break;
                 case "Database":
                     dataType = ".sql";
+                    label3.Text = "Table name (file will be date + table name)";
                     break;
                 case "Excel":
                     dataType = ".xlsx";
+                    label3.Text = message;
                     break;
                 default:
                     dataType = ".json";
+                    label3.Text = message;
                     break;
             }
             return dataType;

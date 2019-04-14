@@ -71,6 +71,7 @@
     <Compile Include="Methods\LoadJSON.cs" />
     <Compile Include="Methods\SetDataPoints.cs" />
     <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\DatabaseDataFormat.cs" />
     <Compile Include="Models\DataFormat.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -29,7 +29,7 @@ namespace DataDrop2.Models
         {
             string filePath = directoryLocation + "\\" + fileName;
             using (System.IO.StreamWriter file =
-                new System.IO.StreamWriter(filePath))
+            new System.IO.StreamWriter(filePath))
             {
                 file.WriteLine(ToDataFormat());
             }
