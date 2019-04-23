@@ -135,7 +135,7 @@ namespace DataDrop2
             switch (destinationDataType)
             {
                 case "JSON":
-                    dataFormat = new JSONDataFormat(destinationDataType);
+                    dataFormat = new JSONDataFormat();
                     dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
@@ -144,17 +144,17 @@ namespace DataDrop2
                 case "API":
                     break;
                 case "Database":
-                    dataFormat = new DatabaseDataFormat(destinationDataType);
+                    dataFormat = new DatabaseDataFormat();
                     dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "Excel":
-                    dataFormat = new ExcelDataFormat(destinationDataType);
+                    dataFormat = new ExcelDataFormat();
                     dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 default:
-                    dataFormat = new JSONDataFormat(destinationDataType);
+                    dataFormat = new JSONDataFormat();
                     break;
             }
         }

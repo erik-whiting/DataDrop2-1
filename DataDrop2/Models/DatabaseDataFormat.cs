@@ -68,10 +68,6 @@ namespace DataDrop2.Models
         }
 
 
-        public DatabaseDataFormat(string dataType) 
-            : base(dataType)
-        {
-
-        }
+        public DatabaseDataFormat() : base() { }
     }
 }

@@ -92,11 +92,7 @@ namespace DataDrop2.Models
 
         }
 
-        public ExcelDataFormat(string dataType)
-            : base(dataType)
-        {
-
-        }
+        public ExcelDataFormat() : base() { }
 
     }
 }

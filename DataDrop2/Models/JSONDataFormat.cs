@@ -35,8 +35,7 @@ namespace DataDrop2.Models
             }
         }
 
-        public JSONDataFormat(string dataType) 
-            : base(dataType)
+        public JSONDataFormat() : base()
         {
 
         }
