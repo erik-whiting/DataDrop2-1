@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SourceDataComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +50,18 @@
             this.DestinationFileNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.FileExtensionLabel = new System.Windows.Forms.Label();
+            this.DbConnectSection = new System.Windows.Forms.GroupBox();
+            this.DbSourceText = new System.Windows.Forms.TextBox();
+            this.DbDatabaseText = new System.Windows.Forms.TextBox();
+            this.DbUserNameText = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.DbPasswordText = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.DbConnectSection.SuspendLayout();
             this.SuspendLayout();
             // 
             // SourceDataComboBox
@@ -238,11 +250,100 @@
             this.FileExtensionLabel.Size = new System.Drawing.Size(0, 13);
             this.FileExtensionLabel.TabIndex = 21;
             // 
+            // DbConnectSection
+            // 
+            this.DbConnectSection.Controls.Add(this.label10);
+            this.DbConnectSection.Controls.Add(this.label9);
+            this.DbConnectSection.Controls.Add(this.label8);
+            this.DbConnectSection.Controls.Add(this.label4);
+            this.DbConnectSection.Controls.Add(this.DbPasswordText);
+            this.DbConnectSection.Controls.Add(this.DbUserNameText);
+            this.DbConnectSection.Controls.Add(this.DbDatabaseText);
+            this.DbConnectSection.Controls.Add(this.DbSourceText);
+            this.DbConnectSection.Enabled = false;
+            this.DbConnectSection.Location = new System.Drawing.Point(795, 58);
+            this.DbConnectSection.Name = "DbConnectSection";
+            this.DbConnectSection.Size = new System.Drawing.Size(266, 339);
+            this.DbConnectSection.TabIndex = 22;
+            this.DbConnectSection.TabStop = false;
+            this.DbConnectSection.Text = "Database Connect Info";
+            // 
+            // DbSourceText
+            // 
+            this.DbSourceText.Location = new System.Drawing.Point(6, 52);
+            this.DbSourceText.Name = "DbSourceText";
+            this.DbSourceText.Size = new System.Drawing.Size(179, 20);
+            this.DbSourceText.TabIndex = 0;
+            // 
+            // DbDatabaseText
+            // 
+            this.DbDatabaseText.Location = new System.Drawing.Point(6, 98);
+            this.DbDatabaseText.Name = "DbDatabaseText";
+            this.DbDatabaseText.Size = new System.Drawing.Size(179, 20);
+            this.DbDatabaseText.TabIndex = 1;
+            // 
+            // DbUserNameText
+            // 
+            this.DbUserNameText.Location = new System.Drawing.Point(6, 143);
+            this.DbUserNameText.Name = "DbUserNameText";
+            this.DbUserNameText.Size = new System.Drawing.Size(179, 20);
+            this.DbUserNameText.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // DbPasswordText
+            // 
+            this.DbPasswordText.Location = new System.Drawing.Point(6, 190);
+            this.DbPasswordText.Name = "DbPasswordText";
+            this.DbPasswordText.PasswordChar = '*';
+            this.DbPasswordText.Size = new System.Drawing.Size(179, 20);
+            this.DbPasswordText.TabIndex = 24;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Source";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 82);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Database";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 127);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Username";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 174);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Password";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 450);
+            this.Controls.Add(this.DbConnectSection);
             this.Controls.Add(this.FileExtensionLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DestinationFileNameTextBox);
@@ -261,6 +362,8 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.DbConnectSection.ResumeLayout(false);
+            this.DbConnectSection.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,6 +392,16 @@
         private System.Windows.Forms.TextBox DestinationFileNameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label FileExtensionLabel;
+        private System.Windows.Forms.GroupBox DbConnectSection;
+        private System.Windows.Forms.TextBox DbPasswordText;
+        private System.Windows.Forms.TextBox DbUserNameText;
+        private System.Windows.Forms.TextBox DbDatabaseText;
+        private System.Windows.Forms.TextBox DbSourceText;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
     }
 }
 

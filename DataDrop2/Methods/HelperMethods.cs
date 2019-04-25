@@ -1,18 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataDrop2.Models;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataDrop2.Models
+namespace DataDrop2.Methods
 {
-    class DatabaseDataFormat : DataFormat
+    class HelperMethods
     {
-        public string TableName { get; set; }
-        public override object ToDataFormat()
+        public static List<string> GetAttributes(List<DataObject> dataObjects)
+        {
+            var attributes = new List<string>();
+
+            foreach (var attr in dataObjects.FirstOrDefault().DataPairs)
+            {
+                foreach (var a in attr) attributes.Add(a.Key);
+            }
+
+            return attributes;
+        }
+
+        public static object GenerateSqlInsert(List<DataObject> DataObjects, string TableName)
         {
             var columns = GetAttributes(DataObjects);
-            
+
             string InsertStatement = "INSERT INTO " + TableName + " (";
             foreach (var column in columns)
             {
@@ -48,7 +60,7 @@ namespace DataDrop2.Models
                             {
                                 InsertStatement += "\"" + val[column] + "\")";
                             }
-                            
+
                         }
                     }
                 }
@@ -57,20 +69,6 @@ namespace DataDrop2.Models
 
             return InsertStatement;
         }
-
-        public override void WriteToFile(string directoryLocation, string fileName)
-        {
-            TableName = fileName.Split('.').First();
-            string filePath = directoryLocation + "\\" + DateTime.Now.ToString("MM-dd-yyyy") + fileName;
-            var InsertStatement = ToDataFormat();
-            using (System.IO.StreamWriter file =
-                new System.IO.StreamWriter(filePath))
-            {
-                file.WriteLine(InsertStatement);
-            }
-        }
-
-
-        public DatabaseDataFormat() : base() { }
+        
     }
 }

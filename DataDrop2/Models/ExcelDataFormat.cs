@@ -1,4 +1,5 @@
-﻿using OfficeOpenXml;
+﻿using DataDrop2.Methods;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,16 +11,14 @@ namespace DataDrop2.Models
 {
     class ExcelDataFormat : DataFormat
     {
-        object misvalue = System.Reflection.Missing.Value;
-        
-
+  
         public override object ToDataFormat()
         {
             Dictionary<string, object> ExcelWriteData = new Dictionary<string, object>();
 
             List<string[]> headerRow = new List<string[]>();
             string headers = "";
-            var DOHeaders = GetAttributes(DataObjects);
+            var DOHeaders = HelperMethods.GetAttributes(DataObjects);
             foreach (var h in DOHeaders) headers = headers == "" ? headers += h : headers += "," + h;
             var headerArray = headers.Split(',');
             headerRow.Add(headerArray);

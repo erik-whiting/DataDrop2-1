@@ -16,17 +16,5 @@ namespace DataDrop2
         public abstract void WriteToFile(string directoryLocation, string fileName);
 
         public DataFormat() { }
-        public static List<string> GetAttributes(List<DataObject> dataObjects)
-        {
-            var attributes = new List<string>();
-
-            foreach (var attr in dataObjects.FirstOrDefault().DataPairs)
-            {
-                foreach (var a in attr) attributes.Add(a.Key);
-            }
-
-            return attributes;
-        }
-
     }
 }

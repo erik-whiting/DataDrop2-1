@@ -68,10 +68,11 @@
     <Compile Include="Interfaces\ITransformations.cs" />
     <Compile Include="Methods\AttributesFromExcel.cs" />
     <Compile Include="Methods\AttributesFromJson.cs" />
+    <Compile Include="Methods\HelperMethods.cs" />
     <Compile Include="Methods\LoadJSON.cs" />
     <Compile Include="Methods\SetDataObjects.cs" />
     <Compile Include="Models\Configuration.cs" />
-    <Compile Include="Models\DatabaseDataFormat.cs" />
+    <Compile Include="Models\SqlDataFormat.cs" />
     <Compile Include="Models\DataFormat.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -80,6 +81,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DataObject.cs" />
+    <Compile Include="Models\DBConnectObject.cs" />
+    <Compile Include="Models\DBDataFormat.cs" />
+    <Compile Include="Models\DBObject.cs" />
     <Compile Include="Models\ExcelDataFormat.cs" />
     <Compile Include="Models\JSONDataFormat.cs" />
     <Compile Include="Program.cs" />

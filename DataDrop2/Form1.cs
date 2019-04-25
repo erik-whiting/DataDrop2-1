@@ -145,7 +145,7 @@ namespace DataDrop2
                 case "API":
                     break;
                 case "Database":
-                    dataFormat = new DatabaseDataFormat();
+                    dataFormat = new SqlDataFormat();
                     dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
