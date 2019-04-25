@@ -36,20 +36,31 @@ namespace DataDrop2.Methods
             return headers;
         }
 
+        public static List<string> GetHeaders(string fileLocation)
+        {
+            List<string> headers = new List<string>();
+            Spreadsheet spreadsheet = new Spreadsheet();
+            spreadsheet.LoadFromFile(fileLocation);
+            var sheets = spreadsheet.Workbook.Worksheets;
+            Bytescout.Spreadsheet.Worksheet sheet = spreadsheet.Workbook.Worksheets.ByName("Sheet1");
+            var headerRange = sheet.UsedRangeColumnMax;
+            var rowRange = sheet.UsedRangeRowMax;
+
+            return GetHeaders(sheet);
+        }
+
         private static List<Dictionary<string, string>> GetData(Bytescout.Spreadsheet.Worksheet ws, List<string> headers)
         {
             List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
 
             for (int i = 1; i <= ws.UsedRangeRowMax; i++)
             {
-                
+                var itemDict = new Dictionary<string, string>();
                 for (int x = 0; x < headers.Count; x++)
                 {
-                    var itemDict = new Dictionary<string, string>();
                     itemDict.Add(headers[x], ws.Cell(i, x).Value.ToString());
-                    data.Add(itemDict);
                 }
-                
+                data.Add(itemDict);
             }
 
 

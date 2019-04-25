@@ -10,18 +10,23 @@ namespace DataDrop2
 {
     public abstract class DataFormat : ITransformations
     {
-        public List<DataPoint> DataPoints { get; set; }
+        public List<DataObject> DataObjects { get; set; }
 
         public abstract object ToDataFormat();
         public abstract void WriteToFile(string directoryLocation, string fileName);
 
         public DataFormat() { }
-
-        public List<DataPoint> GetSelectedDataPoints()
+        public static List<string> GetAttributes(List<DataObject> dataObjects)
         {
-            return DataPoints.Where(x => x.Keep == true).ToList();
+            var attributes = new List<string>();
+
+            foreach (var attr in dataObjects.FirstOrDefault().DataPairs)
+            {
+                foreach (var a in attr) attributes.Add(a.Key);
+            }
+
+            return attributes;
         }
 
-        
     }
 }

@@ -11,7 +11,8 @@ namespace DataDrop2.Models
         public string TableName { get; set; }
         public override object ToDataFormat()
         {
-            var columns = DataPoints.Select(x => x.Attribute).Distinct();
+            var columns = GetAttributes(DataObjects);
+            
             string InsertStatement = "INSERT INTO " + TableName + " (";
             foreach (var column in columns)
             {
@@ -26,29 +27,31 @@ namespace DataDrop2.Models
             }
             InsertStatement += ") VALUES" + Environment.NewLine;
             InsertStatement += "(";
-            var valuesNum = DataPoints.Select(x => x.Attribute).Distinct().Count();
-            var i = 1;
-            foreach (var value in DataPoints)
-            {      
-                if (i == 1 || i % valuesNum != 0)
+            foreach (var value in DataObjects)
+            {
+                foreach (var column in columns)
                 {
-                    InsertStatement += "\"" + value.Value + "\", ";
-                    i++;
+                    foreach (var val in value.DataPairs)
+                    {
+                        if (column != columns.Last())
+                        {
+                            InsertStatement += "\"" + val[column] + "\", ";
+                        }
+                        else
+                        {
+                            if (value != DataObjects.Last())
+                            {
+                                InsertStatement += "\"" + val[column] + "\"),";
+                                InsertStatement += Environment.NewLine + "(";
+                            }
+                            else
+                            {
+                                InsertStatement += "\"" + val[column] + "\")";
+                            }
+                            
+                        }
+                    }
                 }
-                else
-                {
-                    if (value != DataPoints.Last())
-                    {
-                        InsertStatement += "\"" + value.Value + "\")," + Environment.NewLine;
-                        InsertStatement += "(";
-                        i++;
-                    }
-                    else
-                    {
-                        InsertStatement += "\"" + value.Value + "\")";
-                    }
-
-                }              
             }
             InsertStatement += ";";
 

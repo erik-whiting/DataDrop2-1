@@ -69,7 +69,7 @@
     <Compile Include="Methods\AttributesFromExcel.cs" />
     <Compile Include="Methods\AttributesFromJson.cs" />
     <Compile Include="Methods\LoadJSON.cs" />
-    <Compile Include="Methods\SetDataPoints.cs" />
+    <Compile Include="Methods\SetDataObjects.cs" />
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\DatabaseDataFormat.cs" />
     <Compile Include="Models\DataFormat.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataPoint.cs" />
+    <Compile Include="Models\DataObject.cs" />
     <Compile Include="Models\ExcelDataFormat.cs" />
     <Compile Include="Models\JSONDataFormat.cs" />
     <Compile Include="Program.cs" />

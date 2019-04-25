@@ -13,16 +13,14 @@ namespace DataDrop2.Models
 
         public override object ToDataFormat()
         {
-            List<Dictionary<string, string>> SerializableDataPoints = new List<Dictionary<string, string>>();
-
-            foreach (var dp in DataPoints)
+            List<Dictionary<string, string>> SerializableDataObjects = new List<Dictionary<string, string>>();
+            
+            foreach (var dp in DataObjects)
             {
-                var SerializableDataPoint = new Dictionary<string, string>();
-                SerializableDataPoint.Add(dp.Attribute, dp.Value);
-                SerializableDataPoints.Add(SerializableDataPoint);
+                foreach (var pair in dp.DataPairs) { SerializableDataObjects.Add(pair); }
             }
             
-            return JsonConvert.SerializeObject(SerializableDataPoints);
+            return JsonConvert.SerializeObject(SerializableDataObjects);
         }
 
         public override void WriteToFile(string directoryLocation, string fileName)

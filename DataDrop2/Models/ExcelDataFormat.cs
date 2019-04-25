@@ -19,37 +19,29 @@ namespace DataDrop2.Models
 
             List<string[]> headerRow = new List<string[]>();
             string headers = "";
-            var DpHeaders = DataPoints.Select(x => x.Attribute).Distinct().ToList();
-            foreach (var dp in DpHeaders)
-            {
-                if (headers == "")
-                {
-                    headers += dp;
-                }
-                else
-                {
-                    headers += "," + dp;
-                }
-            }
+            var DOHeaders = GetAttributes(DataObjects);
+            foreach (var h in DOHeaders) headers = headers == "" ? headers += h : headers += "," + h;
             var headerArray = headers.Split(',');
             headerRow.Add(headerArray);
-            string headerRange = "A1: " + Char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
+            string headerRange = "A1: " + char.ConvertFromUtf32(headerRow[0].Length + 64) + "1";
             ExcelWriteData.Add("HeaderData", headerRow);
             ExcelWriteData.Add("HeaderRange", headerRange);
 
             string cellDataString = "";
             var cellData = new List<string[]>();
-            foreach (var header in DpHeaders)
+            foreach (var header in DOHeaders)
             {
-                foreach (var dp in DataPoints.Where(x => x.Attribute == header))
+                foreach (var dataObject in DataObjects)
                 {
-                    cellDataString += (cellDataString == "" ? dp.Value : "," + dp.Value); 
+                    foreach (var pair in dataObject.DataPairs)
+                    {
+                        cellDataString += (cellDataString == "" ? pair[header] : "," + pair[header]);
+                    }
                 }
                 cellData.Add(cellDataString.Split(','));
                 cellDataString = "";
             }
             
-
             ExcelWriteData.Add("CellData", cellData);
 
             return ExcelWriteData;

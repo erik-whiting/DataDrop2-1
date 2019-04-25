@@ -19,7 +19,6 @@ namespace DataDrop2
         List<string> SourceFormats = new List<string>();
         List<string> DestinationFormats = new List<string>();
         List<string> KeepVals = new List<string>();
-        public List<DataPoint> AvailableDataPoints = new List<DataPoint>();
         List<Dictionary<string, string>> allAttributes = new List<Dictionary<string, string>>();
 
         public Form1()
@@ -83,7 +82,7 @@ namespace DataDrop2
                     break;
                 case "Excel":
                     allAttributes = AttributesFromExcel.GetExcelAttributes(fileLocation);
-                    SetAttributesView(allAttributes);
+                    SetAttributesViewFromExcel(fileLocation);
                     break;
                 default:
                     break;
@@ -96,20 +95,21 @@ namespace DataDrop2
 
         private void SetAttributesView(List<Dictionary<string, string>> attributes)
         {
-            foreach (var item in attributes)
+            foreach (var item in attributes.FirstOrDefault())
             {
-                if (!availableListBox.Items.Contains(item.First().Key))
+                if (!availableListBox.Items.Contains(item.Key))
                 {
-                    availableListBox.Items.Add(item.First().Key);
+                    availableListBox.Items.Add(item.Key);
                 }
             }
         }
 
-        private void SetAttributesViewFromExcel(List<Dictionary<string, string>> attributes)
+        private void SetAttributesViewFromExcel(string fileLocation)
         {
-            foreach (var item in attributes.First())
+            var attributes = AttributesFromExcel.GetHeaders(fileLocation);
+            foreach (var item in attributes)
             {
-                availableListBox.Items.Add(item.Key);
+                availableListBox.Items.Add(item);
             }
         }
 
@@ -121,8 +121,9 @@ namespace DataDrop2
 
         private void Discard_Click(object sender, EventArgs e)
         {
+            var toDiscard = destinationAttributes.SelectedItem.ToString();
             destinationAttributes.Items.Remove(destinationAttributes.SelectedItem);
-            KeepVals.RemoveAll(x => x == destinationAttributes.SelectedItem.ToString());
+            KeepVals.Remove(toDiscard);
             
         }
 
@@ -136,7 +137,7 @@ namespace DataDrop2
             {
                 case "JSON":
                     dataFormat = new JSONDataFormat();
-                    dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
+                    dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "XML":
@@ -145,12 +146,12 @@ namespace DataDrop2
                     break;
                 case "Database":
                     dataFormat = new DatabaseDataFormat();
-                    dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
+                    dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "Excel":
                     dataFormat = new ExcelDataFormat();
-                    dataFormat.DataPoints = SetDataPoints.Set(allAttributes, KeepVals);
+                    dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 default:

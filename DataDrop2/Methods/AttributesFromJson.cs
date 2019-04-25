@@ -17,12 +17,12 @@ namespace DataDrop2.Methods
             var loadedJson = new LoadJSON(fileLocation);
             foreach (var jobject in loadedJson.JsonObjects)
             {
+                var itemDict = new Dictionary<string, string>();
                 foreach (var item in jobject)
                 {
-                    var itemDict = new Dictionary<string, string>();
                     itemDict.Add(item.Key, item.Value.ToString());
-                    response.Add(itemDict);
-                } 
+                }
+                response.Add(itemDict);
             }
 
             return response;
