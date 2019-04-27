@@ -25,7 +25,11 @@ namespace DataDrop2.Models
 
         public override void WriteToFile(string directoryLocation, string fileName)
         {
-            throw new NotImplementedException();
+            var insertStatement = HelperMethods.GenerateSqlInsert(DataObjects, fileName).ToString();
+            insertStatement = insertStatement.Replace("\"", "'");
+            insertStatement = insertStatement.Replace("\\r\\n", " ");
+            DB.Query(insertStatement);
+            DB.CloseConnection();
         }
 
         public void Connect(string Source, string Catalog, string UserName, string Password)

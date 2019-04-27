@@ -60,6 +60,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.DbConnectSection.SuspendLayout();
             this.SuspendLayout();
@@ -338,11 +339,21 @@
             this.label10.TabIndex = 28;
             this.label10.Text = "Password";
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(596, 163);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(46, 13);
+            this.StatusLabel.TabIndex = 24;
+            this.StatusLabel.Text = "Pending";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 450);
+            this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.DbConnectSection);
             this.Controls.Add(this.FileExtensionLabel);
             this.Controls.Add(this.label3);
@@ -402,6 +413,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label StatusLabel;
     }
 }
 

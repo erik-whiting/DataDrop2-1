@@ -68,6 +68,7 @@
     <Compile Include="Interfaces\ITransformations.cs" />
     <Compile Include="Methods\AttributesFromExcel.cs" />
     <Compile Include="Methods\AttributesFromJson.cs" />
+    <Compile Include="Methods\AttributesFromXML.cs" />
     <Compile Include="Methods\HelperMethods.cs" />
     <Compile Include="Methods\LoadJSON.cs" />
     <Compile Include="Methods\SetDataObjects.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Models\DBObject.cs" />
     <Compile Include="Models\ExcelDataFormat.cs" />
     <Compile Include="Models\JSONDataFormat.cs" />
+    <Compile Include="Models\XMLDataFormat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

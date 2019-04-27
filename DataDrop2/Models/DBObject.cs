@@ -12,12 +12,28 @@ namespace DataDrop2.Models
         private DBConnectObject ConnectionObject { get; set; }
         private SqlConnection Connection { get; set; }
         public SqlCommand Command { get; set; }
+        public string Status { get; set; }
 
 
         public DBObject(DBConnectObject conn)
         {
             ConnectionObject = conn;
             Connection = new SqlConnection(ConnectionObject.MakeConnectionString());
+            try
+            {
+                Connection.Open();
+                Status = "Connected";
+            }
+            catch (Exception ex)
+            {
+                Status = "Connection Failed: " + ex;
+            }
+        }
+
+        public void CloseConnection()
+        {
+            Connection.Close();
+            Status = "Disconnected";
         }
 
         public SqlDataReader Query(string SQL)

@@ -31,6 +31,7 @@ namespace DataDrop2
                 "XML",
                 "API",
                 "Excel",
+                "SQL",
                 "Database"
             };
 
@@ -84,12 +85,13 @@ namespace DataDrop2
                     allAttributes = AttributesFromExcel.GetExcelAttributes(fileLocation);
                     SetAttributesViewFromExcel(fileLocation);
                     break;
+                case "XML":
+                    allAttributes = AttributesFromXML.GetXMLAttributes(fileLocation);
+                    SetAttributesView(allAttributes);
+                    break;
                 default:
                     break;
             }
-
-
-            
 
         }
 
@@ -110,6 +112,17 @@ namespace DataDrop2
             foreach (var item in attributes)
             {
                 availableListBox.Items.Add(item);
+            }
+        }
+
+        private void SetAttributesViewFromXML(List<Dictionary<string, string>> attributes) 
+        {
+            foreach (var item in attributes.Select(x => x.Keys))
+            {
+                if (!availableListBox.Items.Contains(item.First()))
+                {
+                    availableListBox.Items.Add(item.First());
+                }
             }
         }
 
@@ -141,16 +154,29 @@ namespace DataDrop2
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "XML":
+                    dataFormat = new XMLDataFormat();
+                    dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
+                    dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "API":
                     break;
-                case "Database":
+                case "SQL":
                     dataFormat = new SqlDataFormat();
                     dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
                 case "Excel":
                     dataFormat = new ExcelDataFormat();
+                    dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
+                    dataFormat.WriteToFile(directory, fileName);
+                    break;
+                case "Database":
+                    var source = DbSourceText.Text;
+                    var catalog = DbDatabaseText.Text;
+                    var userName = DbUserNameText.Text;
+                    var pass = DbPasswordText.Text;
+                    dataFormat = new DBDataFormat(source, catalog, userName, pass);
+                    StatusLabel.Text = new DBDataFormat(source, catalog, userName, pass).DB.Status;
                     dataFormat.DataObjects = SetDataObjects.Set(allAttributes, KeepVals);
                     dataFormat.WriteToFile(directory, fileName);
                     break;
@@ -189,13 +215,23 @@ namespace DataDrop2
                     dataType = "In Development";
                     label3.Text = message;
                     break;
-                case "Database":
+                case "SQL":
                     dataType = ".sql";
                     label3.Text = "Table name (file will be date + table name)";
                     break;
                 case "Excel":
                     dataType = ".xlsx";
                     label3.Text = message;
+                    break;
+                case "Database":
+                    label3.Text = "Target table";
+                    DbConnectSection.Enabled = true;
+                    var DefaultSource = Environment.MachineName;
+                    DbSourceText.Text = DefaultSource;
+                    // For testing
+                    DbDatabaseText.Text = "LearningTest";
+                    DbUserNameText.Text = "erik_example";
+                    DbPasswordText.Text = "abc123";
                     break;
                 default:
                     dataType = ".json";
@@ -204,5 +240,11 @@ namespace DataDrop2
             }
             return dataType;
         }
+
+        public void SetDbOptions()
+        {
+            
+        }
+
     }
 }

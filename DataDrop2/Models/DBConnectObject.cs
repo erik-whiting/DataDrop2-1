@@ -13,14 +13,21 @@ namespace DataDrop2.Models
         private string UserName { get; set; }
         private string Password { get; set; }
 
-        public DBConnectObject(string Source, string Catalog, string UserName, string Password)
+        public DBConnectObject(string source, string catalog, string userName, string password)
         {
-
+            Source = source;
+            Catalog = catalog;
+            UserName = userName;
+            Password = password;
         }
 
         public string MakeConnectionString()
         {
-            return @"Data Source={Source};Initial Catalog={Catalog};User Id={UserName};Password={Password}";
+            var connString = "Data Source=" + Source + ";";
+            connString += "Initial Catalog=" + Catalog + ";";
+            connString += "User ID=" + UserName + ";";
+            connString += "Password=" + Password;
+            return connString;
         }
 
     }
