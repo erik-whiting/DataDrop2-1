@@ -69,9 +69,11 @@
     <Compile Include="Methods\AttributesFromExcel.cs" />
     <Compile Include="Methods\AttributesFromJson.cs" />
     <Compile Include="Methods\AttributesFromXML.cs" />
+    <Compile Include="Methods\AttributesFromApi.cs" />
     <Compile Include="Methods\HelperMethods.cs" />
     <Compile Include="Methods\LoadJSON.cs" />
     <Compile Include="Methods\SetDataObjects.cs" />
+    <Compile Include="Models\ApiDataFormat.cs" />
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\SqlDataFormat.cs" />
     <Compile Include="Models\DataFormat.cs" />

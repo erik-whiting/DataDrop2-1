@@ -35,7 +35,7 @@
             this.DestinationDataComboBox = new System.Windows.Forms.ComboBox();
             this.sourceFile = new System.Windows.Forms.OpenFileDialog();
             this.sourceFileTextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ApiTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.openSource = new System.Windows.Forms.Button();
@@ -51,15 +51,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.FileExtensionLabel = new System.Windows.Forms.Label();
             this.DbConnectSection = new System.Windows.Forms.GroupBox();
-            this.DbSourceText = new System.Windows.Forms.TextBox();
-            this.DbDatabaseText = new System.Windows.Forms.TextBox();
-            this.DbUserNameText = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.DbPasswordText = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DbPasswordText = new System.Windows.Forms.TextBox();
+            this.DbUserNameText = new System.Windows.Forms.TextBox();
+            this.DbDatabaseText = new System.Windows.Forms.TextBox();
+            this.DbSourceText = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.StatusLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.DbConnectSection.SuspendLayout();
@@ -112,12 +112,13 @@
             this.sourceFileTextBox.Size = new System.Drawing.Size(230, 20);
             this.sourceFileTextBox.TabIndex = 6;
             // 
-            // textBox2
+            // ApiTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 143);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 20);
-            this.textBox2.TabIndex = 7;
+            this.ApiTextBox.Enabled = false;
+            this.ApiTextBox.Location = new System.Drawing.Point(6, 143);
+            this.ApiTextBox.Name = "ApiTextBox";
+            this.ApiTextBox.Size = new System.Drawing.Size(230, 20);
+            this.ApiTextBox.TabIndex = 7;
             // 
             // label5
             // 
@@ -179,7 +180,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.sourceFileTextBox);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.ApiTextBox);
             this.groupBox1.Controls.Add(this.openSource);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(12, 58);
@@ -269,57 +270,14 @@
             this.DbConnectSection.TabStop = false;
             this.DbConnectSection.Text = "Database Connect Info";
             // 
-            // DbSourceText
+            // label10
             // 
-            this.DbSourceText.Location = new System.Drawing.Point(6, 52);
-            this.DbSourceText.Name = "DbSourceText";
-            this.DbSourceText.Size = new System.Drawing.Size(179, 20);
-            this.DbSourceText.TabIndex = 0;
-            // 
-            // DbDatabaseText
-            // 
-            this.DbDatabaseText.Location = new System.Drawing.Point(6, 98);
-            this.DbDatabaseText.Name = "DbDatabaseText";
-            this.DbDatabaseText.Size = new System.Drawing.Size(179, 20);
-            this.DbDatabaseText.TabIndex = 1;
-            // 
-            // DbUserNameText
-            // 
-            this.DbUserNameText.Location = new System.Drawing.Point(6, 143);
-            this.DbUserNameText.Name = "DbUserNameText";
-            this.DbUserNameText.Size = new System.Drawing.Size(179, 20);
-            this.DbUserNameText.TabIndex = 2;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // DbPasswordText
-            // 
-            this.DbPasswordText.Location = new System.Drawing.Point(6, 190);
-            this.DbPasswordText.Name = "DbPasswordText";
-            this.DbPasswordText.PasswordChar = '*';
-            this.DbPasswordText.Size = new System.Drawing.Size(179, 20);
-            this.DbPasswordText.TabIndex = 24;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Source";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 82);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Database";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 174);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Password";
             // 
             // label9
             // 
@@ -330,14 +288,57 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Username";
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 174);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Password";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 82);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Database";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Source";
+            // 
+            // DbPasswordText
+            // 
+            this.DbPasswordText.Location = new System.Drawing.Point(6, 190);
+            this.DbPasswordText.Name = "DbPasswordText";
+            this.DbPasswordText.PasswordChar = '*';
+            this.DbPasswordText.Size = new System.Drawing.Size(179, 20);
+            this.DbPasswordText.TabIndex = 24;
+            // 
+            // DbUserNameText
+            // 
+            this.DbUserNameText.Location = new System.Drawing.Point(6, 143);
+            this.DbUserNameText.Name = "DbUserNameText";
+            this.DbUserNameText.Size = new System.Drawing.Size(179, 20);
+            this.DbUserNameText.TabIndex = 2;
+            // 
+            // DbDatabaseText
+            // 
+            this.DbDatabaseText.Location = new System.Drawing.Point(6, 98);
+            this.DbDatabaseText.Name = "DbDatabaseText";
+            this.DbDatabaseText.Size = new System.Drawing.Size(179, 20);
+            this.DbDatabaseText.TabIndex = 1;
+            // 
+            // DbSourceText
+            // 
+            this.DbSourceText.Location = new System.Drawing.Point(6, 52);
+            this.DbSourceText.Name = "DbSourceText";
+            this.DbSourceText.Size = new System.Drawing.Size(179, 20);
+            this.DbSourceText.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // StatusLabel
             // 
@@ -388,7 +389,7 @@
         private System.Windows.Forms.ComboBox DestinationDataComboBox;
         private System.Windows.Forms.OpenFileDialog sourceFile;
         private System.Windows.Forms.TextBox sourceFileTextBox;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ApiTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button openSource;

@@ -89,6 +89,11 @@ namespace DataDrop2
                     allAttributes = AttributesFromXML.GetXMLAttributes(fileLocation);
                     SetAttributesView(allAttributes);
                     break;
+                case "API":
+                    string sourceUrl = ApiTextBox.Text;
+                    allAttributes = AttributesFromApi.GetApiAttributes(sourceUrl);
+                    SetAttributesView(allAttributes);
+                    break;
                 default:
                     break;
             }
@@ -188,7 +193,12 @@ namespace DataDrop2
 
         private void SourceDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-  
+            if (SourceDataComboBox.Text == "API")
+            {
+                ApiTextBox.Enabled = true;
+                // For Testing:
+                ApiTextBox.Text = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/Genre/read.php"; 
+            }
         }
 
         private void DestinationDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
