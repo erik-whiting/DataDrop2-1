@@ -19,6 +19,18 @@ namespace DataDrop2.Methods
                 foreach (var attr in KeepValues)
                 {
                     dict.Add(attr, val[attr]);
+                    //try
+                    //{
+                    //    dict.Add(attr, val[attr]);
+                    //}
+                    //catch (Exceptio)
+                    //{
+
+                    //}
+                    //finally
+                    //{
+
+                    //}
                 }
                 dataObj.DataPairs.Add(dict);
                 DataObjects.Add(dataObj);

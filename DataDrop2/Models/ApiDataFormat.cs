@@ -10,14 +10,8 @@ namespace DataDrop2.Models
     {
         public ApiDataFormat() : base() { }
 
-        public override object ToDataFormat()
-        {
-            throw new NotImplementedException();
-        }
+        public override object ToDataFormat() => throw new NotImplementedException();
 
-        public override void WriteToFile(string directoryLocation, string fileName)
-        {
-            throw new NotImplementedException();
-        }
+        public override void WriteToFile(string directoryLocation, string fileName) => throw new NotImplementedException();
     }
 }

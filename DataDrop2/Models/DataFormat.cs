@@ -15,6 +15,11 @@ namespace DataDrop2
         public abstract object ToDataFormat();
         public abstract void WriteToFile(string directoryLocation, string fileName);
 
+        public static void DoAThing()
+        {
+            Console.WriteLine("Hey");
+        }
+
         public DataFormat() { }
     }
 }

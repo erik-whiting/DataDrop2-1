@@ -23,10 +23,7 @@ namespace DataDrop2.Methods
                 foreach (var item in items.Children<JObject>())
                 {
                     var itemDict = new Dictionary<string, string>();
-                    foreach (JProperty prop in item.Properties())
-                    {
-                        itemDict.Add(prop.Name, prop.Value.ToString());
-                    }
+                    foreach (JProperty prop in item.Properties()) itemDict.Add(prop.Name, prop.Value.ToString());
                     response.Add(itemDict);
                 }
             }

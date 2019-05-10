@@ -19,7 +19,6 @@ namespace DataDrop2.Models
             {
                 foreach (var pair in dp.DataPairs) { SerializableDataObjects.Add(pair); }
             }
-            
             return JsonConvert.SerializeObject(SerializableDataObjects);
         }
 
