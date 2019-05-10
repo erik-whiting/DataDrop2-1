@@ -133,15 +133,31 @@ namespace DataDrop2
 
         private void Keep_Click(object sender, EventArgs e)
         {
-            destinationAttributes.Items.Add(availableListBox.SelectedItem);
-            KeepVals.Add(availableListBox.SelectedItem.ToString());
+            if (availableListBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(availableListBox, "Please select atleast one attribute to add");
+            }
+            else
+            {
+                destinationAttributes.Items.Add(availableListBox.SelectedItem);
+                KeepVals.Add(availableListBox.SelectedItem.ToString());
+            }
         }
 
         private void Discard_Click(object sender, EventArgs e)
         {
-            var toDiscard = destinationAttributes.SelectedItem.ToString();
-            destinationAttributes.Items.Remove(destinationAttributes.SelectedItem);
-            KeepVals.Remove(toDiscard);
+
+            if (destinationAttributes.SelectedIndex == -1)
+            {
+
+                errorProvider1.SetError(destinationAttributes, "Please select atleast one attribute to remove");
+            }
+            else
+            {
+                var toDiscard = destinationAttributes.SelectedItem.ToString();
+                destinationAttributes.Items.Remove(destinationAttributes.SelectedItem);
+                KeepVals.Remove(toDiscard);
+            }
             
         }
 

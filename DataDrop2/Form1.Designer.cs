@@ -61,16 +61,19 @@
             this.DbSourceText = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.StatusLabel = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.DbConnectSection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // SourceDataComboBox
             // 
             this.SourceDataComboBox.FormattingEnabled = true;
-            this.SourceDataComboBox.Location = new System.Drawing.Point(12, 31);
+            this.SourceDataComboBox.Location = new System.Drawing.Point(24, 60);
+            this.SourceDataComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.SourceDataComboBox.Name = "SourceDataComboBox";
-            this.SourceDataComboBox.Size = new System.Drawing.Size(121, 21);
+            this.SourceDataComboBox.Size = new System.Drawing.Size(238, 33);
             this.SourceDataComboBox.TabIndex = 0;
             this.SourceDataComboBox.SelectedIndexChanged += new System.EventHandler(this.SourceDataComboBox_SelectedIndexChanged);
             // 
@@ -78,9 +81,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 12);
+            this.label1.Location = new System.Drawing.Point(26, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 17);
+            this.label1.Size = new System.Drawing.Size(233, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Source Data Type";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -89,60 +93,67 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(593, 12);
+            this.label2.Location = new System.Drawing.Point(1186, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 17);
+            this.label2.Size = new System.Drawing.Size(284, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Destination Data Type";
             // 
             // DestinationDataComboBox
             // 
             this.DestinationDataComboBox.FormattingEnabled = true;
-            this.DestinationDataComboBox.Location = new System.Drawing.Point(596, 31);
+            this.DestinationDataComboBox.Location = new System.Drawing.Point(1192, 60);
+            this.DestinationDataComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DestinationDataComboBox.Name = "DestinationDataComboBox";
-            this.DestinationDataComboBox.Size = new System.Drawing.Size(121, 21);
+            this.DestinationDataComboBox.Size = new System.Drawing.Size(238, 33);
             this.DestinationDataComboBox.TabIndex = 3;
             this.DestinationDataComboBox.SelectedIndexChanged += new System.EventHandler(this.DestinationDataComboBox_SelectedIndexChanged);
             // 
             // sourceFileTextBox
             // 
             this.sourceFileTextBox.Enabled = false;
-            this.sourceFileTextBox.Location = new System.Drawing.Point(6, 35);
+            this.sourceFileTextBox.Location = new System.Drawing.Point(12, 67);
+            this.sourceFileTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.sourceFileTextBox.Name = "sourceFileTextBox";
-            this.sourceFileTextBox.Size = new System.Drawing.Size(230, 20);
+            this.sourceFileTextBox.Size = new System.Drawing.Size(456, 31);
             this.sourceFileTextBox.TabIndex = 6;
             // 
             // ApiTextBox
             // 
             this.ApiTextBox.Enabled = false;
-            this.ApiTextBox.Location = new System.Drawing.Point(6, 143);
+            this.ApiTextBox.Location = new System.Drawing.Point(12, 275);
+            this.ApiTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ApiTextBox.Name = "ApiTextBox";
-            this.ApiTextBox.Size = new System.Drawing.Size(230, 20);
+            this.ApiTextBox.Size = new System.Drawing.Size(456, 31);
             this.ApiTextBox.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Location = new System.Drawing.Point(12, 31);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.Size = new System.Drawing.Size(47, 25);
             this.label5.TabIndex = 8;
             this.label5.Text = "File";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 127);
+            this.label6.Location = new System.Drawing.Point(12, 244);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.Size = new System.Drawing.Size(54, 25);
             this.label6.TabIndex = 9;
             this.label6.Text = "URL";
             // 
             // openSource
             // 
-            this.openSource.Location = new System.Drawing.Point(6, 61);
+            this.openSource.Location = new System.Drawing.Point(12, 117);
+            this.openSource.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.openSource.Name = "openSource";
-            this.openSource.Size = new System.Drawing.Size(75, 23);
+            this.openSource.Size = new System.Drawing.Size(150, 44);
             this.openSource.TabIndex = 10;
             this.openSource.Text = "Browse";
             this.openSource.UseVisualStyleBackColor = true;
@@ -150,9 +161,10 @@
             // 
             // showAttributes
             // 
-            this.showAttributes.Location = new System.Drawing.Point(12, 236);
+            this.showAttributes.Location = new System.Drawing.Point(24, 454);
+            this.showAttributes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.showAttributes.Name = "showAttributes";
-            this.showAttributes.Size = new System.Drawing.Size(253, 23);
+            this.showAttributes.Size = new System.Drawing.Size(506, 44);
             this.showAttributes.TabIndex = 11;
             this.showAttributes.Text = "Show Available Attributes";
             this.showAttributes.UseVisualStyleBackColor = true;
@@ -161,17 +173,20 @@
             // availableListBox
             // 
             this.availableListBox.FormattingEnabled = true;
-            this.availableListBox.Location = new System.Drawing.Point(12, 276);
+            this.availableListBox.ItemHeight = 25;
+            this.availableListBox.Location = new System.Drawing.Point(24, 531);
+            this.availableListBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.availableListBox.Name = "availableListBox";
-            this.availableListBox.Size = new System.Drawing.Size(253, 121);
+            this.availableListBox.Size = new System.Drawing.Size(502, 229);
             this.availableListBox.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 98);
+            this.label7.Location = new System.Drawing.Point(12, 188);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(22, 13);
+            this.label7.Size = new System.Drawing.Size(45, 25);
             this.label7.TabIndex = 13;
             this.label7.Text = "-or-";
             // 
@@ -183,9 +198,11 @@
             this.groupBox1.Controls.Add(this.ApiTextBox);
             this.groupBox1.Controls.Add(this.openSource);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(12, 58);
+            this.groupBox1.Location = new System.Drawing.Point(24, 112);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(253, 171);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(506, 329);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Source";
@@ -193,16 +210,19 @@
             // destinationAttributes
             // 
             this.destinationAttributes.FormattingEnabled = true;
-            this.destinationAttributes.Location = new System.Drawing.Point(379, 68);
+            this.destinationAttributes.ItemHeight = 25;
+            this.destinationAttributes.Location = new System.Drawing.Point(758, 131);
+            this.destinationAttributes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.destinationAttributes.Name = "destinationAttributes";
-            this.destinationAttributes.Size = new System.Drawing.Size(171, 329);
+            this.destinationAttributes.Size = new System.Drawing.Size(338, 629);
             this.destinationAttributes.TabIndex = 15;
             // 
             // Keep
             // 
-            this.Keep.Location = new System.Drawing.Point(301, 296);
+            this.Keep.Location = new System.Drawing.Point(602, 569);
+            this.Keep.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Keep.Name = "Keep";
-            this.Keep.Size = new System.Drawing.Size(45, 36);
+            this.Keep.Size = new System.Drawing.Size(90, 69);
             this.Keep.TabIndex = 16;
             this.Keep.Text = ">>";
             this.Keep.UseVisualStyleBackColor = true;
@@ -210,9 +230,10 @@
             // 
             // Discard
             // 
-            this.Discard.Location = new System.Drawing.Point(301, 338);
+            this.Discard.Location = new System.Drawing.Point(602, 650);
+            this.Discard.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Discard.Name = "Discard";
-            this.Discard.Size = new System.Drawing.Size(45, 36);
+            this.Discard.Size = new System.Drawing.Size(90, 69);
             this.Discard.TabIndex = 17;
             this.Discard.Text = "<<";
             this.Discard.UseVisualStyleBackColor = true;
@@ -220,9 +241,10 @@
             // 
             // generateFile
             // 
-            this.generateFile.Location = new System.Drawing.Point(596, 110);
+            this.generateFile.Location = new System.Drawing.Point(1192, 212);
+            this.generateFile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.generateFile.Name = "generateFile";
-            this.generateFile.Size = new System.Drawing.Size(121, 23);
+            this.generateFile.Size = new System.Drawing.Size(242, 44);
             this.generateFile.TabIndex = 18;
             this.generateFile.Text = "Generate File";
             this.generateFile.UseVisualStyleBackColor = true;
@@ -230,26 +252,29 @@
             // 
             // DestinationFileNameTextBox
             // 
-            this.DestinationFileNameTextBox.Location = new System.Drawing.Point(596, 84);
+            this.DestinationFileNameTextBox.Location = new System.Drawing.Point(1192, 162);
+            this.DestinationFileNameTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DestinationFileNameTextBox.Name = "DestinationFileNameTextBox";
-            this.DestinationFileNameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.DestinationFileNameTextBox.Size = new System.Drawing.Size(238, 31);
             this.DestinationFileNameTextBox.TabIndex = 19;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(596, 68);
+            this.label3.Location = new System.Drawing.Point(1192, 131);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.Size = new System.Drawing.Size(223, 25);
             this.label3.TabIndex = 20;
             this.label3.Text = "Destination File Name";
             // 
             // FileExtensionLabel
             // 
             this.FileExtensionLabel.AutoSize = true;
-            this.FileExtensionLabel.Location = new System.Drawing.Point(723, 91);
+            this.FileExtensionLabel.Location = new System.Drawing.Point(1446, 175);
+            this.FileExtensionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.FileExtensionLabel.Name = "FileExtensionLabel";
-            this.FileExtensionLabel.Size = new System.Drawing.Size(0, 13);
+            this.FileExtensionLabel.Size = new System.Drawing.Size(0, 25);
             this.FileExtensionLabel.TabIndex = 21;
             // 
             // DbConnectSection
@@ -263,9 +288,11 @@
             this.DbConnectSection.Controls.Add(this.DbDatabaseText);
             this.DbConnectSection.Controls.Add(this.DbSourceText);
             this.DbConnectSection.Enabled = false;
-            this.DbConnectSection.Location = new System.Drawing.Point(795, 58);
+            this.DbConnectSection.Location = new System.Drawing.Point(1590, 112);
+            this.DbConnectSection.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DbConnectSection.Name = "DbConnectSection";
-            this.DbConnectSection.Size = new System.Drawing.Size(266, 339);
+            this.DbConnectSection.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DbConnectSection.Size = new System.Drawing.Size(532, 652);
             this.DbConnectSection.TabIndex = 22;
             this.DbConnectSection.TabStop = false;
             this.DbConnectSection.Text = "Database Connect Info";
@@ -273,87 +300,101 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 174);
+            this.label10.Location = new System.Drawing.Point(14, 335);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.Size = new System.Drawing.Size(106, 25);
             this.label10.TabIndex = 28;
             this.label10.Text = "Password";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 127);
+            this.label9.Location = new System.Drawing.Point(14, 244);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.Size = new System.Drawing.Size(110, 25);
             this.label9.TabIndex = 27;
             this.label9.Text = "Username";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 82);
+            this.label8.Location = new System.Drawing.Point(14, 158);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.Size = new System.Drawing.Size(104, 25);
             this.label8.TabIndex = 26;
             this.label8.Text = "Database";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 33);
+            this.label4.Location = new System.Drawing.Point(14, 63);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(80, 25);
             this.label4.TabIndex = 25;
             this.label4.Text = "Source";
             // 
             // DbPasswordText
             // 
-            this.DbPasswordText.Location = new System.Drawing.Point(6, 190);
+            this.DbPasswordText.Location = new System.Drawing.Point(12, 365);
+            this.DbPasswordText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DbPasswordText.Name = "DbPasswordText";
             this.DbPasswordText.PasswordChar = '*';
-            this.DbPasswordText.Size = new System.Drawing.Size(179, 20);
+            this.DbPasswordText.Size = new System.Drawing.Size(354, 31);
             this.DbPasswordText.TabIndex = 24;
             // 
             // DbUserNameText
             // 
-            this.DbUserNameText.Location = new System.Drawing.Point(6, 143);
+            this.DbUserNameText.Location = new System.Drawing.Point(12, 275);
+            this.DbUserNameText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DbUserNameText.Name = "DbUserNameText";
-            this.DbUserNameText.Size = new System.Drawing.Size(179, 20);
+            this.DbUserNameText.Size = new System.Drawing.Size(354, 31);
             this.DbUserNameText.TabIndex = 2;
             // 
             // DbDatabaseText
             // 
-            this.DbDatabaseText.Location = new System.Drawing.Point(6, 98);
+            this.DbDatabaseText.Location = new System.Drawing.Point(12, 188);
+            this.DbDatabaseText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DbDatabaseText.Name = "DbDatabaseText";
-            this.DbDatabaseText.Size = new System.Drawing.Size(179, 20);
+            this.DbDatabaseText.Size = new System.Drawing.Size(354, 31);
             this.DbDatabaseText.TabIndex = 1;
             // 
             // DbSourceText
             // 
-            this.DbSourceText.Location = new System.Drawing.Point(6, 52);
+            this.DbSourceText.Location = new System.Drawing.Point(12, 100);
+            this.DbSourceText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.DbSourceText.Name = "DbSourceText";
-            this.DbSourceText.Size = new System.Drawing.Size(179, 20);
+            this.DbSourceText.Size = new System.Drawing.Size(354, 31);
             this.DbSourceText.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(596, 163);
+            this.StatusLabel.Location = new System.Drawing.Point(1192, 313);
+            this.StatusLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(46, 13);
+            this.StatusLabel.Size = new System.Drawing.Size(91, 25);
             this.StatusLabel.TabIndex = 24;
             this.StatusLabel.Text = "Pending";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 450);
+            this.ClientSize = new System.Drawing.Size(2180, 865);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.DbConnectSection);
             this.Controls.Add(this.FileExtensionLabel);
@@ -370,12 +411,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SourceDataComboBox);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.DbConnectSection.ResumeLayout(false);
             this.DbConnectSection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,6 +458,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
