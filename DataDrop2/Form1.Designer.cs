@@ -62,6 +62,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.StatusLabel = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.DbConnectSection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -71,7 +72,7 @@
             // 
             this.SourceDataComboBox.FormattingEnabled = true;
             this.SourceDataComboBox.Location = new System.Drawing.Point(24, 60);
-            this.SourceDataComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SourceDataComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.SourceDataComboBox.Name = "SourceDataComboBox";
             this.SourceDataComboBox.Size = new System.Drawing.Size(238, 33);
             this.SourceDataComboBox.TabIndex = 0;
@@ -104,7 +105,7 @@
             // 
             this.DestinationDataComboBox.FormattingEnabled = true;
             this.DestinationDataComboBox.Location = new System.Drawing.Point(1192, 60);
-            this.DestinationDataComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DestinationDataComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.DestinationDataComboBox.Name = "DestinationDataComboBox";
             this.DestinationDataComboBox.Size = new System.Drawing.Size(238, 33);
             this.DestinationDataComboBox.TabIndex = 3;
@@ -114,7 +115,7 @@
             // 
             this.sourceFileTextBox.Enabled = false;
             this.sourceFileTextBox.Location = new System.Drawing.Point(12, 67);
-            this.sourceFileTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sourceFileTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.sourceFileTextBox.Name = "sourceFileTextBox";
             this.sourceFileTextBox.Size = new System.Drawing.Size(456, 31);
             this.sourceFileTextBox.TabIndex = 6;
@@ -123,7 +124,7 @@
             // 
             this.ApiTextBox.Enabled = false;
             this.ApiTextBox.Location = new System.Drawing.Point(12, 275);
-            this.ApiTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ApiTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ApiTextBox.Name = "ApiTextBox";
             this.ApiTextBox.Size = new System.Drawing.Size(456, 31);
             this.ApiTextBox.TabIndex = 7;
@@ -151,7 +152,7 @@
             // openSource
             // 
             this.openSource.Location = new System.Drawing.Point(12, 117);
-            this.openSource.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.openSource.Margin = new System.Windows.Forms.Padding(6);
             this.openSource.Name = "openSource";
             this.openSource.Size = new System.Drawing.Size(150, 44);
             this.openSource.TabIndex = 10;
@@ -162,7 +163,7 @@
             // showAttributes
             // 
             this.showAttributes.Location = new System.Drawing.Point(24, 454);
-            this.showAttributes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.showAttributes.Margin = new System.Windows.Forms.Padding(6);
             this.showAttributes.Name = "showAttributes";
             this.showAttributes.Size = new System.Drawing.Size(506, 44);
             this.showAttributes.TabIndex = 11;
@@ -175,7 +176,7 @@
             this.availableListBox.FormattingEnabled = true;
             this.availableListBox.ItemHeight = 25;
             this.availableListBox.Location = new System.Drawing.Point(24, 531);
-            this.availableListBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.availableListBox.Margin = new System.Windows.Forms.Padding(6);
             this.availableListBox.Name = "availableListBox";
             this.availableListBox.Size = new System.Drawing.Size(502, 229);
             this.availableListBox.TabIndex = 12;
@@ -199,9 +200,9 @@
             this.groupBox1.Controls.Add(this.openSource);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(24, 112);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(506, 329);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
@@ -212,15 +213,15 @@
             this.destinationAttributes.FormattingEnabled = true;
             this.destinationAttributes.ItemHeight = 25;
             this.destinationAttributes.Location = new System.Drawing.Point(758, 131);
-            this.destinationAttributes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.destinationAttributes.Margin = new System.Windows.Forms.Padding(6);
             this.destinationAttributes.Name = "destinationAttributes";
             this.destinationAttributes.Size = new System.Drawing.Size(338, 629);
             this.destinationAttributes.TabIndex = 15;
             // 
             // Keep
             // 
-            this.Keep.Location = new System.Drawing.Point(602, 569);
-            this.Keep.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Keep.Location = new System.Drawing.Point(602, 531);
+            this.Keep.Margin = new System.Windows.Forms.Padding(6);
             this.Keep.Name = "Keep";
             this.Keep.Size = new System.Drawing.Size(90, 69);
             this.Keep.TabIndex = 16;
@@ -230,8 +231,8 @@
             // 
             // Discard
             // 
-            this.Discard.Location = new System.Drawing.Point(602, 650);
-            this.Discard.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Discard.Location = new System.Drawing.Point(602, 621);
+            this.Discard.Margin = new System.Windows.Forms.Padding(6);
             this.Discard.Name = "Discard";
             this.Discard.Size = new System.Drawing.Size(90, 69);
             this.Discard.TabIndex = 17;
@@ -242,7 +243,7 @@
             // generateFile
             // 
             this.generateFile.Location = new System.Drawing.Point(1192, 212);
-            this.generateFile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.generateFile.Margin = new System.Windows.Forms.Padding(6);
             this.generateFile.Name = "generateFile";
             this.generateFile.Size = new System.Drawing.Size(242, 44);
             this.generateFile.TabIndex = 18;
@@ -253,7 +254,7 @@
             // DestinationFileNameTextBox
             // 
             this.DestinationFileNameTextBox.Location = new System.Drawing.Point(1192, 162);
-            this.DestinationFileNameTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DestinationFileNameTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.DestinationFileNameTextBox.Name = "DestinationFileNameTextBox";
             this.DestinationFileNameTextBox.Size = new System.Drawing.Size(238, 31);
             this.DestinationFileNameTextBox.TabIndex = 19;
@@ -289,9 +290,9 @@
             this.DbConnectSection.Controls.Add(this.DbSourceText);
             this.DbConnectSection.Enabled = false;
             this.DbConnectSection.Location = new System.Drawing.Point(1590, 112);
-            this.DbConnectSection.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DbConnectSection.Margin = new System.Windows.Forms.Padding(6);
             this.DbConnectSection.Name = "DbConnectSection";
-            this.DbConnectSection.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DbConnectSection.Padding = new System.Windows.Forms.Padding(6);
             this.DbConnectSection.Size = new System.Drawing.Size(532, 652);
             this.DbConnectSection.TabIndex = 22;
             this.DbConnectSection.TabStop = false;
@@ -340,7 +341,7 @@
             // DbPasswordText
             // 
             this.DbPasswordText.Location = new System.Drawing.Point(12, 365);
-            this.DbPasswordText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DbPasswordText.Margin = new System.Windows.Forms.Padding(6);
             this.DbPasswordText.Name = "DbPasswordText";
             this.DbPasswordText.PasswordChar = '*';
             this.DbPasswordText.Size = new System.Drawing.Size(354, 31);
@@ -349,7 +350,7 @@
             // DbUserNameText
             // 
             this.DbUserNameText.Location = new System.Drawing.Point(12, 275);
-            this.DbUserNameText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DbUserNameText.Margin = new System.Windows.Forms.Padding(6);
             this.DbUserNameText.Name = "DbUserNameText";
             this.DbUserNameText.Size = new System.Drawing.Size(354, 31);
             this.DbUserNameText.TabIndex = 2;
@@ -357,7 +358,7 @@
             // DbDatabaseText
             // 
             this.DbDatabaseText.Location = new System.Drawing.Point(12, 188);
-            this.DbDatabaseText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DbDatabaseText.Margin = new System.Windows.Forms.Padding(6);
             this.DbDatabaseText.Name = "DbDatabaseText";
             this.DbDatabaseText.Size = new System.Drawing.Size(354, 31);
             this.DbDatabaseText.TabIndex = 1;
@@ -365,7 +366,7 @@
             // DbSourceText
             // 
             this.DbSourceText.Location = new System.Drawing.Point(12, 100);
-            this.DbSourceText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DbSourceText.Margin = new System.Windows.Forms.Padding(6);
             this.DbSourceText.Name = "DbSourceText";
             this.DbSourceText.Size = new System.Drawing.Size(354, 31);
             this.DbSourceText.TabIndex = 0;
@@ -390,11 +391,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(602, 706);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 59);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2180, 865);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.DbConnectSection);
             this.Controls.Add(this.FileExtensionLabel);
@@ -411,7 +423,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SourceDataComboBox);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
@@ -459,6 +471,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
