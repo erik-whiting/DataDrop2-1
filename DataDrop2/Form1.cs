@@ -275,6 +275,10 @@ namespace DataDrop2
         private void button1_Click(object sender, EventArgs e)
         {
             availableListBox.Items.Clear();
+            if (destinationAttributes.Items.Count > 0 )
+            {
+                destinationAttributes.Items.Clear();
+            }
         }
     }
 }
