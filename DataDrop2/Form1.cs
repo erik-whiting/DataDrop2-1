@@ -279,6 +279,7 @@ namespace DataDrop2
             {
                 destinationAttributes.Items.Clear();
             }
+            if (KeepVals.Count > 0) KeepVals.Clear();
         }
     }
 }
